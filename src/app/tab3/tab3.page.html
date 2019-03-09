@@ -6,4 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-label>Create a new chat here</ion-label>
+    <ion-input placeholder="Insert your chat name here" [(ngModel)]='chat.name'></ion-input>
+    <ion-button (click)='set()'>Set</ion-button>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='chat'>
+      {{ chat.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none" *ngIf='chat'>
+        <ion-item *ngFor='let item of chat.messages.reverse()'>
+          <ion-label><b>{{item.author}}</b>: {{item.message}}</ion-label>
+        </ion-item>
+      </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-input placeholder="Insert your message here" [(ngModel)]='notice.message'></ion-input>
+    <ion-button (click)='send()'>Send</ion-button>
+  </ion-toolbar>
+</ion-footer>
